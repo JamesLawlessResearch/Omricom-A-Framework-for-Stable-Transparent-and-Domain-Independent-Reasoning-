@@ -1,0 +1,189 @@
+CROSS‑REFERENCE VERIFICATION ENGINE (CRVE)
+
+Unified Specification — Rev Ω.1
+
+The CRVE is the subsystem that replaces the old “Domain” concept entirely.
+It is not a domain module — it is a truth‑checking engine that sits between AERION and the Ω‑Core.
+
+Its job is simple:
+
+Take the abstracted representation from AERION, verify it against external reality, and quantify trust.
+
+It does this using:
+
+• search engine queries
+• AI model queries
+• cross‑reference comparison
+• a traffic‑light trust system
+• a numerical trust code
+
+
+This gives Omricon a real‑world grounding layer without contaminating the core architecture.
+
+---
+
+⭐ 1. Purpose of the CRVE
+
+The CRVE exists to:
+
+• verify claims
+• detect contradictions
+• detect missing information
+• quantify trust
+• provide external grounding
+• prevent hallucination
+• feed trust metrics into the Ω‑Core
+
+This is the external truth interface of Omricon.
+
+(See: Traffic‑Light Trust System)
+
+---
+
+⭐ 2. Position in the Pipeline
+
+VORIN
+→ SERA
+→ AERION
+→ CRVE
+→ Ω‑Core
+→ Governor
+→ Output
+
+The CRVE is the only layer allowed to interact with external data sources.
+
+---
+
+⭐ 3. CRVE Components
+
+The CRVE consists of four deterministic subsystems:
+
+3.1 Search Engine Query Unit
+
+Queries external search engines for factual grounding.
+
+3.2 AI Reasoning Query Unit
+
+Queries an AI model for pattern‑based reasoning.
+
+3.3 Cross‑Reference Comparator
+
+Compares search results and AI reasoning for:
+
+• overlap
+• contradictions
+• missing data
+• consistency
+• confidence
+
+3.4 Trust Scoring Engine
+
+Outputs:
+
+• traffic‑light trust rating
+• numerical trust code
+• trust lineage
+
+This is fed directly into the Ω‑Core.
+
+---
+
+⭐ 4. CRVE Data Flow
+
+1. AERION produces an abstract representation.
+2. CRVE extracts key claims.
+3. Search Engine Query Unit retrieves external data.
+4. AI Query Unit retrieves model‑based reasoning.
+5. Cross‑Reference Comparator evaluates consistency.
+6. Trust Scoring Engine produces trust metrics.
+7. Ω‑Core uses trust metrics to validate reasoning.
+8. Governor enforces behavioural safety.
+
+
+This is a closed, deterministic loop.
+
+---
+
+⭐ 5. Traffic‑Light Trust System
+
+(See: Traffic‑Light Trust System)
+
+• Green — high agreement
+• Amber — partial agreement
+• Red — contradiction or missing data
+
+This is the behavioural trust signal.
+
+---
+
+⭐ 6. Numerical Trust Code
+
+(See: Numerical Trust Code)
+
+A score from 0.00 to 1.00 representing:
+
+• consistency
+• overlap
+• contradiction level
+• data completeness
+• model confidence
+
+This is the quantitative trust signal.
+
+---
+
+⭐ 7. CRVE → Ω‑Core Interface
+
+The CRVE sends the following to the Ω‑Core:
+
+• trust_score
+• trust_light
+• cross_reference_report
+• contradiction_flags
+• missing_data_flags
+• external_lineage
+
+The Ω‑Core uses this to:
+
+• validate reasoning
+• apply corrections
+• halt if unsafe
+• request re‑evaluation
+
+(See: Integrate CRVE with Core)
+
+---
+
+⭐ 8. CRVE Guarantees
+
+The CRVE guarantees:
+
+• external grounding
+• cross‑checked reasoning
+• quantified trust
+• hallucination prevention
+• contradiction detection
+• traceability
+• deterministic verification
+
+This is the truth kernel of Omricon.
+
+---
+
+⭐ 9. Summary
+
+The CRVE replaces the old Domain concept entirely.
+It is not a domain module — it is a verification engine.
+
+It gives Omricon:
+
+• real‑world grounding
+• cross‑referenced truth
+• trust quantification
+• contradiction detection
+• external lineage
+
+This is the missing piece that makes Omricon commercially viable.
+
+---
+
