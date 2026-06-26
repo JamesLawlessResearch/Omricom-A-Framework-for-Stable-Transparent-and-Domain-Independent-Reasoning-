@@ -1,0 +1,360 @@
+SERA‑Ω — HARD STRUCTURAL UNIFIED SPECIFICATION
+
+
+Omricon Structural Engine (Rev Ω.1)
+
+---
+
+1. Purpose
+
+SERA‑Ω is the deterministic structural engine of the Omricon reasoning pipeline.
+Its function is to convert VORIN‑Ω’s interpreted payload into a stable, predictable, invariant‑safe structure that can be consumed by AERION and the downstream reasoning layers.
+
+SERA‑Ω:
+
+• does not interpret
+• does not abstract
+• does not infer
+• does not rewrite
+• does not guess
+
+
+SERA‑Ω structures — nothing more, nothing less.
+
+Its design ensures:
+
+• deterministic behaviour
+• structural coherence
+• constraint‑aware stability
+• compatibility with Ω‑Core invariants
+• zero drift across long sequences
+
+
+---
+
+2. Position in the Omricon Pipeline
+
+USER INPUT
+↓
+Input Normalisation
+↓
+VORIN‑Ω (Interpretation)
+↓
+SERA‑Ω (Structure)
+↓
+AERION (Abstraction)
+↓
+Domain Modules
+↓
+Ω‑Core (Evaluation)
+↓
+Governors
+↓
+Output Normalisation
+↓
+FINAL OUTPUT
+
+SERA‑Ω is the structural bottleneck:
+every reasoning path must pass through it.
+
+---
+
+3. Input Contract (From VORIN‑Ω)
+
+SERA‑Ω accepts only VORIN‑Ω‑formatted payloads:
+
+• context_unit
+• meaning_unit
+• action_unit
+• domain_indicator
+• constraints
+• ambiguity_flags
+• contradiction_flags
+• confidence = 1.0
+
+
+SERA‑Ω must not modify these units.
+
+---
+
+4. Output Contract (To AERION)
+
+SERA‑Ω outputs:
+
+• structured_representation
+• structure_type
+• structural_constraints
+• conflict_flags
+• ambiguity_flags
+• structural_confidence = 1.0
+
+
+AERION must be able to consume this without reinterpretation.
+
+---
+
+5. SERA‑Ω Invariants (Must Never Be Violated)
+
+SERA‑Ω must never:
+
+• change meaning
+• change tone
+• change intent
+• reorder content in a way that alters logic
+• invent structure not requested
+• silently resolve structural conflicts
+• collapse under nested constraints
+• output multiple structures without flagging ambiguity
+• violate Ω‑Core invariants
+• violate governor constraints
+
+
+These invariants define SERA‑Ω’s identity.
+
+---
+
+6. SERA‑Ω Guarantees (Must Always Be Upheld)
+
+SERA‑Ω must always:
+
+• output a valid structure
+• preserve meaning exactly
+• preserve logical, causal, temporal, and dependency order
+• surface structural conflicts explicitly
+• maintain full traceability to VORIN‑Ω
+• operate deterministically
+• remain invariant‑safe
+• remain governor‑safe
+
+
+These guarantees ensure downstream stability.
+
+---
+
+7. Structure Selection Logic
+
+SERA‑Ω selects structure based on:
+
+1. explicit user request
+2. VORIN‑Ω metadata
+3. governor constraints
+4. domain_indicator
+
+
+If no structure is specified:
+
+• SERA‑Ω selects the simplest valid structure
+• and marks it as implicit_structure
+
+
+Valid structure types include:
+
+• ordered list
+• unordered list
+• table
+• outline
+• tree
+• steps
+• argument map
+• condition‑action pairs
+
+
+SERA‑Ω must not invent exotic or unsupported formats.
+
+---
+
+8. Order Preservation Rules
+
+SERA‑Ω must preserve:
+
+• logical order
+• causal order
+• temporal order
+• dependency order
+
+
+Order may only be changed when:
+
+• the user explicitly requests a reordering
+• VORIN‑Ω metadata requires it
+• governor constraints enforce it
+
+
+Otherwise, order is immutable.
+
+---
+
+9. Nested Constraint Handling
+
+SERA‑Ω must support:
+
+• nested lists
+• nested conditions
+• nested logic
+• nested structural modes
+
+
+without:
+
+• collapse
+• drift
+• reordering
+• flattening
+• implicit transformation
+
+
+If nesting becomes structurally unsafe, SERA‑Ω must surface:
+
+STRUCTURAL_OVERLOAD
+
+---
+
+10. Structural Conflict Logic (Hard‑Structural Mode)
+
+SERA‑Ω must detect and surface conflicts, not resolve them.
+
+Conflicts include:
+
+• incompatible structure type
+• contradictory ordering requirements
+• nested constraints that violate invariants
+• structure that would distort meaning
+• structure that cannot be satisfied under governor constraints
+
+
+When detected, SERA‑Ω outputs:
+
+STRUCTURE_CONFLICT
+
+with:
+
+• reason
+• location
+• flags
+• suggested fallback
+
+
+SERA‑Ω must not attempt correction — that is Ω‑Core’s job.
+
+---
+
+11. Ambiguity Handling
+
+If VORIN‑Ω provides multiple interpretations:
+
+• SERA‑Ω structures each interpretation separately
+• labels them as AMBIGUOUS_STRUCTURE
+• preserves all meaning exactly
+• does not merge or reconcile interpretations
+
+
+Ambiguity is surfaced, never resolved.
+
+---
+
+12. Constraint‑Aware Structural Stability (Unified Logic)
+
+This is where the regulatory DNA is used — but only structurally.
+
+SERA‑Ω monitors:
+
+• constraint pressure
+• structural overload
+• coherence deviation
+• rising conflict density
+
+
+These map to the old SERA thresholds:
+
+CST → Structural Saturation Threshold
+
+Too many structural constraints to satisfy simultaneously.
+
+CDT → Coherence Deviation Threshold
+
+Structure begins to distort meaning or order.
+
+SCT → Structural Collapse Threshold
+
+No valid structure can preserve meaning.
+
+When SCT is reached:
+
+SERA‑Ω halts and outputs:
+
+STRUCTURE_COLLAPSE
+
+Ω‑Core then takes over.
+
+---
+
+13. Failure Modes
+
+1. STRUCTURE_CONFLICT
+
+Structure cannot be satisfied.
+
+2. FORMAT_UNSUPPORTED
+
+User requests unsupported structure type.
+
+3. AMBIGUOUS_STRUCTURE
+
+Multiple interpretations require multiple structures.
+
+4. STRUCTURAL_OVERLOAD
+
+Nested or conflicting constraints exceed safe limits.
+
+5. STRUCTURE_COLLAPSE
+
+No structure can preserve meaning.
+
+Each failure mode must include:
+
+• reason
+• flags
+• confidence
+• suggested fallback
+
+
+---
+
+14. Determinism Requirements
+
+SERA‑Ω must be:
+
+• deterministic
+• reproducible
+• invariant‑safe
+• governor‑safe
+• VORIN‑Ω‑aligned
+
+
+Same input → same structure → every time.
+
+No randomness.
+No heuristics.
+No probabilistic behaviour.
+
+---
+
+15. Summary
+
+SERA‑Ω is the hard structural engine of the Omricon architecture.
+
+It is:
+
+• deterministic
+• constraint‑aware
+• invariant‑safe
+• governor‑safe
+• VORIN‑Ω‑aligned
+• Ω‑Core‑compatible
+
+
+It structures meaning without altering it, preserves order without exception, surfaces conflicts without resolving them, and ensures that every downstream component receives a stable, predictable, traceable structural representation.
+
+SERA‑Ω is the architecture that keeps Omricon coherent.
+
+---
